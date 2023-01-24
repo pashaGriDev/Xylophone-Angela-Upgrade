@@ -13,6 +13,7 @@
 		109520FA297FF283002C7AC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109520F9297FF283002C7AC2 /* Assets.xcassets */; };
 		109520FD297FF283002C7AC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109520FB297FF283002C7AC2 /* LaunchScreen.storyboard */; };
 		10952105297FF445002C7AC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 10952104297FF445002C7AC2 /* .gitignore */; };
+		10952107297FF73F002C7AC2 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 10952106297FF73F002C7AC2 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		109520FC297FF283002C7AC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		109520FE297FF283002C7AC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10952104297FF445002C7AC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		10952106297FF73F002C7AC2 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		109520E4297FF281002C7AC2 = {
 			isa = PBXGroup;
 			children = (
+				10952104297FF445002C7AC2 /* .gitignore */,
 				109520EF297FF281002C7AC2 /* Xylophone-Angela-Upgrade */,
 				109520EE297FF281002C7AC2 /* Products */,
 			);
@@ -59,10 +62,10 @@
 				109520F0297FF281002C7AC2 /* AppDelegate.swift */,
 				109520F2297FF281002C7AC2 /* SceneDelegate.swift */,
 				109520F4297FF281002C7AC2 /* ViewController.swift */,
-				10952104297FF445002C7AC2 /* .gitignore */,
 				109520F9297FF283002C7AC2 /* Assets.xcassets */,
 				109520FB297FF283002C7AC2 /* LaunchScreen.storyboard */,
 				109520FE297FF283002C7AC2 /* Info.plist */,
+				10952106297FF73F002C7AC2 /* Sounds */,
 			);
 			path = "Xylophone-Angela-Upgrade";
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			files = (
 				109520FD297FF283002C7AC2 /* LaunchScreen.storyboard in Resources */,
 				10952105297FF445002C7AC2 /* .gitignore in Resources */,
+				10952107297FF73F002C7AC2 /* Sounds in Resources */,
 				109520FA297FF283002C7AC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
