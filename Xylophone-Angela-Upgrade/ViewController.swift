@@ -20,25 +20,20 @@ class ViewController: UIViewController {
     var player: AVAudioPlayer?
     
     let soundButtons: [SoundButton] = [
-        .init(title: "A", color: .colorA),
-        .init(title: "B", color: .colorB),
         .init(title: "C", color: .colorC),
         .init(title: "D", color: .colorD),
         .init(title: "E", color: .colorE),
         .init(title: "F", color: .colorF),
-        .init(title: "G", color: .colorG)]
+        .init(title: "G", color: .colorG),
+        .init(title: "A", color: .colorA),
+        .init(title: "B", color: .colorB)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         settingsForStackView()
         offsetSoundButton()
     }
-    
     
     // MARK: - Methods
     
@@ -46,9 +41,9 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        // add target
-        
-//        soundButtons[0].addTarget(self, action: #selector(didPressed), for: .touchUpInside)
+        soundButtons.forEach {
+            $0.addTarget(self, action: #selector(didPressed), for: .touchUpInside)
+        }
     }
     
     private func settingsForStackView() {
@@ -70,7 +65,6 @@ class ViewController: UIViewController {
     }
     
     private func offsetSoundButton() {
-        
         soundButtons.forEach {
             let offset = offsetButton * multi
             NSLayoutConstraint.activate([
@@ -80,21 +74,15 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @objc func didPressed(_ sender: UIButton) {
-
         if let title = sender.currentTitle {
-            print("it's work title : ", title)
-            playSound()
-        } else {
-            print("it's not work")
+            playSound(title)
+            animateFor(button: sender)
         }
     }
     
-    func playSound() {
-        guard let path = Bundle.main.path(forResource: "D", ofType: "wav") else {
-            print("not path")
-            return }
+    func playSound(_ note: String) {
+        guard let path = Bundle.main.path(forResource: note, ofType: "wav") else { return }
         let url = URL(fileURLWithPath: path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -102,6 +90,16 @@ class ViewController: UIViewController {
             
         } catch let error {
             print(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Animate
+    
+    private func animateFor(button: UIButton) {
+        UIView.animate(withDuration: 0.1, delay: 0.0) {
+            button.transform = .init(scaleX: 1.05, y: 1.05)
+        }completion: { _ in
+            button.transform = .identity
         }
     }
 }

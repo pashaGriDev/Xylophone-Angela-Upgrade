@@ -9,24 +9,24 @@ import UIKit
 
 extension UIColor {
     static var colorA: UIColor {
-        UIColor(red: 10/100, green: 107/100, blue: 253/100, alpha: 1.0)
+        #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
     }
     static var colorB: UIColor {
-        UIColor(red: 172/100, green: 62/100, blue: 226/100, alpha: 1.0)
+        #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
     }
     static var colorC: UIColor {
-        UIColor(red: 254/100, green: 44/100, blue: 24/100, alpha: 1.0)
+        #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
     }
     static var colorD: UIColor {
-        UIColor(red: 255/100, green: 147/100, blue: 1/100, alpha: 1.0)
+        #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
     }
     static var colorE: UIColor {
-        UIColor(red: 255/100, green: 203/100, blue: 0, alpha: 1.0)
+        #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
     }
     static var colorF: UIColor {
-        UIColor(red: 17/100, green: 200/100, blue: 67/100, alpha: 1.0)
+        #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
     }
     static var colorG: UIColor {
-        UIColor(red: 84/100, green: 67/100, blue: 218/100, alpha: 1.0)
+        #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
     }
 }

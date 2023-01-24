@@ -15,8 +15,6 @@ class SoundButton: UIButton {
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         backgroundColor = color
         layer.cornerRadius = 12.0
-        
-//        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
