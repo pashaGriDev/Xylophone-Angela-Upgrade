@@ -8,12 +8,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // MARK: - Constants
+    
+    let soundButton: UIButton = {
+       let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("C", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .red
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        
+        setup()
     }
+    
+    
+    // MARK: - Methods
+    
+    private func setup() {
+        
+        view.backgroundColor = .white
+        view.addSubview(soundButton)
+        
+        NSLayoutConstraint.activate([
+            soundButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            soundButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            soundButton.widthAnchor.constraint(equalToConstant: 200),
+            soundButton.heightAnchor.constraint(equalToConstant: 50)])
+        
+        // add target
+        
+        soundButton.addTarget(self, action: #selector(didPressed), for: .touchUpInside)
+    }
+    
+    @objc func didPressed(_ sender: UIButton) {
 
-
+        if let title = sender.currentTitle, title == "C" {
+            print("it's work")
+        } else {
+            print("it's not work")
+        }
+    }
 }
 
