@@ -14,14 +14,8 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer?
     
-    let soundButton: UIButton = {
-       let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("C", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .B
-        return button
-    }()
+    let soundButtons: [SoundButton] = [
+        .init(title: "A", color: .A)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,22 +29,24 @@ class ViewController: UIViewController {
     private func setup() {
         
         view.backgroundColor = .white
-        view.addSubview(soundButton)
+        soundButtons.forEach {
+            self.view.addSubview($0)
+        }
         
         NSLayoutConstraint.activate([
-            soundButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            soundButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            soundButton.widthAnchor.constraint(equalToConstant: 200),
-            soundButton.heightAnchor.constraint(equalToConstant: 50)])
+            soundButtons[0].centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            soundButtons[0].centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            soundButtons[0].widthAnchor.constraint(equalToConstant: 200),
+            soundButtons[0].heightAnchor.constraint(equalToConstant: 50)])
         
         // add target
         
-        soundButton.addTarget(self, action: #selector(didPressed), for: .touchUpInside)
+        soundButtons[0].addTarget(self, action: #selector(didPressed), for: .touchUpInside)
     }
     
     @objc func didPressed(_ sender: UIButton) {
 
-        if let title = sender.currentTitle, title == "C" {
+        if let title = sender.currentTitle {
             print("it's work")
             playSound()
         } else {
