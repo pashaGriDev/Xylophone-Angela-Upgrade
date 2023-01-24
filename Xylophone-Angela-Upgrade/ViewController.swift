@@ -12,15 +12,31 @@ class ViewController: UIViewController {
     
     // MARK: - Constants
     
+    let offsetButton: CGFloat = 50.0
+    var multi: CGFloat = 0.2
+    let step: CGFloat = 0.1
+    let stackViewSpacing: CGFloat = 14
+    
     var player: AVAudioPlayer?
     
     let soundButtons: [SoundButton] = [
-        .init(title: "A", color: .A)]
+        .init(title: "A", color: .colorA),
+        .init(title: "B", color: .colorB),
+        .init(title: "C", color: .colorC),
+        .init(title: "D", color: .colorD),
+        .init(title: "E", color: .colorE),
+        .init(title: "F", color: .colorF),
+        .init(title: "G", color: .colorG)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        settingsForStackView()
+        offsetSoundButton()
     }
     
     
@@ -29,25 +45,46 @@ class ViewController: UIViewController {
     private func setup() {
         
         view.backgroundColor = .white
-        soundButtons.forEach {
-            self.view.addSubview($0)
-        }
-        
-        NSLayoutConstraint.activate([
-            soundButtons[0].centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            soundButtons[0].centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            soundButtons[0].widthAnchor.constraint(equalToConstant: 200),
-            soundButtons[0].heightAnchor.constraint(equalToConstant: 50)])
         
         // add target
         
-        soundButtons[0].addTarget(self, action: #selector(didPressed), for: .touchUpInside)
+//        soundButtons[0].addTarget(self, action: #selector(didPressed), for: .touchUpInside)
     }
+    
+    private func settingsForStackView() {
+        
+        let stackView = UIStackView(arrangedSubviews: soundButtons)
+        
+        stackView.axis = .vertical
+        stackView.spacing = stackViewSpacing
+        stackView.distribution = .fillEqually
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stackView)
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)])
+    }
+    
+    private func offsetSoundButton() {
+        
+        soundButtons.forEach {
+            let offset = offsetButton * multi
+            NSLayoutConstraint.activate([
+                $0.leftAnchor.constraint(equalTo: view.leftAnchor, constant: offset),
+                $0.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -offset)])
+            multi += step
+        }
+    }
+    
     
     @objc func didPressed(_ sender: UIButton) {
 
         if let title = sender.currentTitle {
-            print("it's work")
+            print("it's work title : ", title)
             playSound()
         } else {
             print("it's not work")

@@ -9,14 +9,14 @@ import UIKit
 
 class SoundButton: UIButton {
     
-    init(title: String?, color: UIColor? = .black) {
+    init(title: String?, color: UIColor?) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         backgroundColor = color
         layer.cornerRadius = 12.0
         
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
