@@ -20,6 +20,7 @@
 		10952114298003A1002C7AC2 /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1095210D298003A1002C7AC2 /* C.wav */; };
 		10952115298003A1002C7AC2 /* E.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1095210E298003A1002C7AC2 /* E.wav */; };
 		10952116298003A1002C7AC2 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1095210F298003A1002C7AC2 /* F.wav */; };
+		10952118298005E8002C7AC2 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10952117298005E8002C7AC2 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1095210D298003A1002C7AC2 /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
 		1095210E298003A1002C7AC2 /* E.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = E.wav; sourceTree = "<group>"; };
 		1095210F298003A1002C7AC2 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
+		10952117298005E8002C7AC2 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				109520F0297FF281002C7AC2 /* AppDelegate.swift */,
 				109520F2297FF281002C7AC2 /* SceneDelegate.swift */,
 				109520F4297FF281002C7AC2 /* ViewController.swift */,
+				10952117298005E8002C7AC2 /* UIColor+.swift */,
 				109520F9297FF283002C7AC2 /* Assets.xcassets */,
 				109520FB297FF283002C7AC2 /* LaunchScreen.storyboard */,
 				109520FE297FF283002C7AC2 /* Info.plist */,
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				109520F5297FF281002C7AC2 /* ViewController.swift in Sources */,
+				10952118298005E8002C7AC2 /* UIColor+.swift in Sources */,
 				109520F1297FF281002C7AC2 /* AppDelegate.swift in Sources */,
 				109520F3297FF281002C7AC2 /* SceneDelegate.swift in Sources */,
 			);

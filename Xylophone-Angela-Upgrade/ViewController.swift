@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("C", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
+        button.backgroundColor = .B
         return button
     }()
     
