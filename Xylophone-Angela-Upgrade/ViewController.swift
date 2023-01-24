@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     // MARK: - Constants
+    
+    var player: AVAudioPlayer?
     
     let soundButton: UIButton = {
        let button = UIButton()
@@ -49,8 +52,23 @@ class ViewController: UIViewController {
 
         if let title = sender.currentTitle, title == "C" {
             print("it's work")
+            playSound()
         } else {
             print("it's not work")
+        }
+    }
+    
+    func playSound() {
+        guard let path = Bundle.main.path(forResource: "D", ofType: "wav") else {
+            print("not path")
+            return }
+        let url = URL(fileURLWithPath: path)
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
 }
