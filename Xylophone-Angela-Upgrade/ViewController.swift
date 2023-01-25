@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     let step: CGFloat = 0.1
     let stackViewSpacing: CGFloat = 14
     
-    var player: AVAudioPlayer?
+    var player: AVAudioPlayer!
     
     let soundButtons: [SoundButton] = [
         .init(title: "C", color: .colorC),
@@ -86,8 +86,8 @@ class ViewController: UIViewController {
         let url = URL(fileURLWithPath: path)
         do {
             player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-            
+            player.prepareToPlay()
+            player.play()
         } catch let error {
             print(error.localizedDescription)
         }
